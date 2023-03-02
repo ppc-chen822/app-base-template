@@ -147,14 +147,6 @@
 						"navigationBarBackgroundColor": "#2a82e4",
 						"navigationBarTextStyle": "white"
 					}
-				}, {
-					"path": "face",
-					"style": {
-						"navigationBarTitleText": "人脸识别",
-						"enablePullDownRefresh": false,
-						"navigationBarBackgroundColor": "#2a82e4",
-						"navigationBarTextStyle": "white"
-					}
 				}
 			]
 		},

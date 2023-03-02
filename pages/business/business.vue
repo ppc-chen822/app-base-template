@@ -93,11 +93,6 @@ import shortcutCard from './components/shortcutCard.vue'
                 isShow: true,
                 icon: `${this.imgUrl}/business/shortcut3/a.png`,
                 navigate: '/pages1/form1'
-              },{
-                name: '人脸识别',
-                isShow: true,
-                icon: `${this.imgUrl}/business/shortcut3/a.png`,
-                navigate: '/pages1/face'
               }
             ]
           }
