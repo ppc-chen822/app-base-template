@@ -1,0 +1,237 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationBarBackgroundColor": "#c6deff",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/business/business",
+			"style": {
+				"navigationBarTitleText": "办事",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#62a0eb",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#62a0eb",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#E6EEFB"
+			}
+		},{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2980e3",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/index/threeOpen/villageOpen",
+			"style": {
+				"navigationBarTitleText": "村务公开",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#1270f7",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/index/threeOpen/financialOpen",
+			"style": {
+				"navigationBarTitleText": "财务公开",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#1270f7",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/index/threeOpen/partyOpen",
+			"style": {
+				"navigationBarTitleText": "党务公开",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#e33624",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/index/threeOpen/newsDetail",
+			"style": {
+				"navigationBarTitleText": "详情页",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2a82e4",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/business/businessProcess/businessProcess",
+			"style": {
+				"navigationBarTitleText": "我的办事",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2a82e4",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/business/businessGuide/businessGuide",
+			"style": {
+				"navigationBarTitleText": "办事指南",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2a82e4",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/business/businessGuide/guideDetail",
+			"style": {
+				"navigationBarTitleText": "办事指南详情",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2a82e4",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/message/messageDetail",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2a82e4",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/login/updatePassword",
+			"style": {
+				"navigationBarTitleText": "修改密码",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2980e3",
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/my/noticeList",
+			"style": {
+				"navigationBarTitleText": "通知公告",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#2980e3",
+				"navigationBarTextStyle": "white"
+			}
+		}
+	],
+
+	"subPackages": [
+		{
+			"root": "pages1",
+			"pages": [
+				{
+					"path": "villageBusiness",
+					"style": {
+						"navigationBarTitleText": "村务",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "black",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				}, {
+					"path": "form1",
+					"style": {
+						"navigationBarTitleText": "表单1",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#2a82e4",
+						"navigationBarTextStyle": "white"
+					}
+				}, {
+					"path": "face",
+					"style": {
+						"navigationBarTitleText": "人脸识别",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#2a82e4",
+						"navigationBarTextStyle": "white"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesMy",
+			"pages": [
+				{
+					"path": "my/faceAudit/faceAudit",
+					"style": {
+						"navigationBarTitleText": "人脸采集",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#2a82e4",
+						"navigationBarTextStyle": "white"
+					}
+				}, {
+					"path": "my/help/help",
+					"style": {
+						"navigationBarTitleText": "帮助指引",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#2980e3",
+						"navigationBarTextStyle": "white"
+					}
+				}, {
+					"path": "my/userInfo",
+					"style": {
+						"navigationBarTitleText": "个人信息",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#2980e3",
+						"navigationBarTextStyle": "white"
+					}
+				},{
+					"path": "my/faceAudit/faceHistory",
+					"style": {
+						"navigationBarTitleText": "历史记录",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#2980e3",
+						"navigationBarTextStyle": "white"
+					}
+				}
+			]
+		}
+	],
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "隰县数字乡村",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#383838",
+		"selectedColor": "#383838",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"iconWidth": "24px",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/img/common/a.png",
+			"selectedIconPath": "static/img/common/aa.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/business/business",
+			"iconPath": "static/img/common/b.png",
+			"selectedIconPath": "static/img/common/bb.png",
+			"text": "办事"
+		}, 
+		{
+			"pagePath": "pages/message/message",
+			"iconPath": "static/img/common/c.png",
+			"selectedIconPath": "static/img/common/cc.png",
+			"text": "消息"
+		}, {
+			"pagePath": "pages/my/my",
+			"iconPath": "static/img/common/d.png",
+			"selectedIconPath": "static/img/common/dd.png",
+			"text": "我的"
+		}]
+	}
+}
