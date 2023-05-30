@@ -74,3 +74,21 @@ export const auditLoginApi=(params)=>http.put(
 	'/auth/expansions/captcha/ignore',
 	params
 )
+
+// 上传第一步(通用)
+export const uploadCommonApi = (params) => http.post(
+	'/system/relate-files',
+	params,
+	{
+    header: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  }
+)
+
+// 将上传的附件绑定业务id删除
+export const delLinkFileApi = (params, config = {}) => http.delete(
+	'/system/relate-files/biz',
+	params,
+	config
+)

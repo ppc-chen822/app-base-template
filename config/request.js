@@ -33,8 +33,6 @@ module.exports = (vm) => {
 
     // 自定义参数
     const custom = response.config ?.custom
-	  if(!uni.getStorageSync('token'))
-	  return data;
     if (data.code !== 200) {
       // 如果没有显式定义custom的toast参数为false的话，默认对报错进行toast弹出提示
       if (custom.toast !== false) {

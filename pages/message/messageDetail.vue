@@ -1,11 +1,11 @@
 <template>
 	<view class="page-container">
-		<view class="content" v-for="item,index in items" :key="item.index">
+		<view class="content" v-for="(item,index) in items" :key="index">
 			<image class="img" :src="nav.icon"></image>
 			<view class="info">
 				<view class="detail"><text>{{item.detail}}</text></view>
 				<view class="time" v-if="item.time">
-					<u--text size="24rpx" color="#A6A6A6" align="center" :text="item.time"></u--text>
+					<u-text size="24rpx" color="#A6A6A6" align="center" :text="item.time" />
 				</view>
 			</view>
 		</view>

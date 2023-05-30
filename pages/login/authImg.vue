@@ -33,7 +33,7 @@
               v-model="slideLength"
               :activeColor="sliderColor"
               :inactiveColor="sliderColor"
-              :blockColor="slideLength === 0 ? '#fff' : '#2980e3'"
+              :blockColor="slideLength === 0 ? '#fff' : $mainColor"
               blockSize="28"
               @change="finalChange"
             />

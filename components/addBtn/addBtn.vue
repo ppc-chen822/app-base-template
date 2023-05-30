@@ -18,7 +18,7 @@ export default {
   .addBtn{
     width: 100rpx;
     height: 100rpx;
-    background: #2a82e4;
+    background: $mainColor;
     display: flex;
     justify-content: center;
     align-items: center;

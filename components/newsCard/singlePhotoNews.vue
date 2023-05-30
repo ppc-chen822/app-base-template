@@ -3,8 +3,8 @@
 
     <view class="content">
       <view class="left">
-        <u--text :text="news.content.articleTitle" :lines="2" size="32rpx" color="#222222" lineHeight="48rpx" />
-        <u--text
+        <u-text :text="news.content.articleTitle" :lines="2" size="32rpx" color="#222222" lineHeight="48rpx" />
+        <u-text
           :text="news.content.articleDate"
           size="26rpx"
           prefixIcon="clock"
@@ -14,7 +14,7 @@
         />
       </view>
       <view class="photo-content">
-        <u--image
+        <u-image
           v-for="photo in news.content.articleCover"
           :key="photo"
           :src="photo"

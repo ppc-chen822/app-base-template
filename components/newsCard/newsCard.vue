@@ -31,7 +31,7 @@ export default {
     // 查看详情
     viewDetail() {
       const { news: { id } } = this
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${id}` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${id}` })
     },
     initNewsType(imgList) {
       if(imgList && imgList.length === 1) {

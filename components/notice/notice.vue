@@ -51,7 +51,7 @@ export default {
     checkNews(index) {
       const { alldata } = this
       const id = alldata[index].id
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${id}&title=通知公告` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${id}&title=通知公告` })
     },
     // 查看全部通知公告
     viewList() {

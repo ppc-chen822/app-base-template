@@ -68,14 +68,6 @@
 				"navigationBarTextStyle": "white"
 			}
 		}, {
-			"path": "pages/index/threeOpen/newsDetail",
-			"style": {
-				"navigationBarTitleText": "详情页",
-				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#2a82e4",
-				"navigationBarTextStyle": "white"
-			}
-		}, {
 			"path": "pages/business/businessProcess/businessProcess",
 			"style": {
 				"navigationBarTitleText": "我的办事",
@@ -119,10 +111,18 @@
 		}, {
 			"path": "pages/my/noticeList",
 			"style": {
-				"navigationBarTitleText": "通知公告",
-				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#2980e3",
-				"navigationBarTextStyle": "white"
+				"navigationBarTitleText": "通知公告"
+			}
+		}, {
+			"path": "pages/common/versionList",
+			"style": {
+				"navigationBarTitleText": "功能介绍"
+			}
+		},
+		{
+			"path": "pages/common/newsDetail",
+			"style": {
+				"navigationBarTitleText": "详情页"
 			}
 		}
 	],
@@ -142,10 +142,7 @@
 				}, {
 					"path": "form1",
 					"style": {
-						"navigationBarTitleText": "表单1",
-						"enablePullDownRefresh": false,
-						"navigationBarBackgroundColor": "#2a82e4",
-						"navigationBarTextStyle": "white"
+						"navigationBarTitleText": "表单1"
 					}
 				}
 			]
@@ -191,10 +188,10 @@
 	],
 
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "隰县数字乡村",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "数字乡村-基础版",
+		"navigationBarBackgroundColor": "#227aff",
+		"backgroundColor": "#f6f6f6"
 	},
 	"uniIdRouter": {},
 	"tabBar": {

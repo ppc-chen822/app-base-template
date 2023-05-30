@@ -20,7 +20,11 @@
           </view>
         </view>
       </view>
-      <view class="news-content" v-html="articleContent" />
+
+      <u-parse
+        :tagStyle="style"
+        :content="newsObj.articleContent"
+      />
     </template>
 
     <skeleton
@@ -41,72 +45,38 @@
 
 <script>
 import { getContentDetailApi } from '@/api/common.js'
-import Skeleton from '@/components/skeleton/skeleton.vue'
 export default {
-  components: { Skeleton },
   onLoad: function (option) {
-    this.loading = true
-    this.getContentDetailFun(option.id)
-    if(option.title) {
-      uni.setNavigationBarTitle({ title: option.title })
+    const { id, title } = option
+    if(title) {
+      uni.setNavigationBarTitle({ title: title })
     }
+    this.getContentDetailFun(id)
 	},
   data() {
     return {
-      loading: false,
       newsObj: {},
-
-      articleContent: ''
+      articleContent: '',
+      style: {
+        p: 'color: #383838; font-size:28rpx; line-height: 50rpx;',
+        img: 'width: 100% !important;'
+      }
     }
   },
-  mounted() {
-    console.log(uni.getWindowInfo().screenWidth);
-  },
   methods: {
+    // 截取发表人第一个字
     subName(str) {
       if(str && str.length > 0) {
         return str.substring(0, 1)
       }
     },
-    // 将富文本中的图片宽度设置为100%
-    formatRichText(html) { //控制小程序中图片大小
-      const screenWidth = uni.getWindowInfo().screenWidth - 30
-      let newContent = ''
-      if (typeof(html) == 'string') { //检测值为字符串才能进行replace操作
-        newContent = html.replace(/<img[^>]*>/gi,
-        function(match) {
-          match = match.replace(/style="[^"]+"/gi, '').replace(/style='[^']+'/gi, '');
-          match = match.replace(/width="[^"]+"/gi, '').replace(/width='[^']+'/gi, '');
-          match = match.replace(/height="[^"]+"/gi, '').replace(/height='[^']+'/gi, '');
-          return match;
-        });
-        newContent = newContent.replace(/style="[^"]+"/gi,
-        function(match) {
-          match = match.replace(/width:[^;]+;/gi, 'max-width:100%;').replace(/width:[^;]+;/gi, 'max-width:100%;');
-          return match;
-        });
-        newContent = newContent.replace(/<br[^>]*\/>/gi, '');
-        newContent = newContent.replace(/\<img/gi, `<img style="width:${screenWidth}px;height:auto;display:inline-block;margin:10rpx auto;"`);
-        // newContent = newContent.replace(/\<img/gi, `<img style="width:100%;height:auto;display:inline-block;margin:10rpx auto;"`);
-        return newContent;
-      }
-    },
 
     // =============== API ===============
     getContentDetailFun(id) {
-      this.loading = true
       getContentDetailApi(id).then((res) => {
-        this.$nextTick(() => {
-          if (!uni.getStorageSync('token')){
-            this.newsObj = res.data.content
-            this.articleContent = this.formatRichText(res.data.content.articleContent)
-          }else{
-            this.newsObj = res.content
-            this.articleContent = this.formatRichText(res.content.articleContent)
-          }
-        })
+        console.log(res)
+        this.newsObj = res.content
       }).catch(err => {
-        this.loading = false
         console.log(err);
       })
     },
@@ -150,11 +120,5 @@ export default {
       }
     }
 
-    .news-content{
-      color: rgba(56, 56, 56, 1);
-      font-size: 28rpx;
-      font-weight: 400;
-      line-height: 50rpx;
-    }
   }
 </style>

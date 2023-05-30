@@ -1,7 +1,5 @@
 <template>
   <view class="page-container">
-    <!-- <view class="bgImg"></view> -->
-    <image class="loginBg" :src="bgImg" mode=""></image>
     
     <view class="login-content">
       <view class="title">
@@ -10,7 +8,7 @@
 
       <!-- 修改密码表单 -->
       <view class="form-content">
-        <u--form
+        <u-form
           labelPosition="top"
           labelWidth="120px"
           :model="loginForm"
@@ -19,15 +17,15 @@
           :labelStyle="labelStyle"
         >
           <u-form-item label="旧密码" prop="oldPassword">
-            <u--input v-model="loginForm.oldPassword" placeholder="请输入旧密码" shape="circle" type="password" customStyle="background: #f5f5f5; border-color: #f5f5f5 !important;" clearable />
+            <u-input v-model="loginForm.oldPassword" placeholder="请输入旧密码" shape="circle" type="password" customStyle="background: #f5f5f5; border-color: #f5f5f5 !important;" clearable />
           </u-form-item>
           <u-form-item label="新密码" prop="newPassword">
-            <u--input v-model="loginForm.newPassword" placeholder="请输入密码" shape="circle" type="password" customStyle="background: #f5f5f5; border-color: #f5f5f5 !important;" clearable />
+            <u-input v-model="loginForm.newPassword" placeholder="请输入密码" shape="circle" type="password" customStyle="background: #f5f5f5; border-color: #f5f5f5 !important;" clearable />
           </u-form-item>
           <u-form-item label="重复新密码" prop="confirmPassword">
-            <u--input v-model="loginForm.confirmPassword" placeholder="请再次输入新密码" shape="circle" type="password" customStyle="background: #f5f5f5; border-color: #f5f5f5 !important;" clearable />
+            <u-input v-model="loginForm.confirmPassword" placeholder="请再次输入新密码" shape="circle" type="password" customStyle="background: #f5f5f5; border-color: #f5f5f5 !important;" clearable />
           </u-form-item>
-        </u--form>
+        </u-form>
         <u-button :customStyle="loginBtnStyle" text="修改密码" shape="circle" @click="updateHandle"></u-button>
       </view>
 
@@ -40,7 +38,6 @@ import { updatePasswordApi } from '@/api/common.js'
   export default {
     data() {
       return {
-        bgImg: `${this.imgUrl}/login/loginBg.png`,
         loginForm: {
           oldPassword: '',
           newPassword: '',
@@ -84,7 +81,7 @@ import { updatePasswordApi } from '@/api/common.js'
           fontSize: '32rpx'
         },
         loginBtnStyle: {
-          background: "#2A82E4",
+          background: this.$mainColor,
           color: "#ffffff",
           fontWeight: "bold",
           letterSpacing: "4rpx",
@@ -125,25 +122,23 @@ import { updatePasswordApi } from '@/api/common.js'
   }
 </script>
 
+<style>
+  page{
+    background: #f6f6f6;
+  }
+</style>
 <style lang="scss" scoped>
   .page-container{
     height: 100vh;
-    background: linear-gradient(180deg, rgba(41, 128, 227, 1) 0%, rgba(42, 130, 228, 0.61) 100%);
-    .loginBg{
-      width: 100%;
-      height: 100vw;
-      margin-top: -130rpx;
-    }
+    padding-top: 100rpx;
     .login-content{
       background: #ffffff;
       border-radius: 20px;
-      // height: 800rpx;
+      
       width: 90%;
-      margin: -250rpx auto;
-      position: relative;
-      z-index: 1;
+      margin: 0rpx auto;
       .title{
-        color: #2A82E4;
+        color: $mainColor;
         font-size: 48rpx;
         font-weight: 700;
         padding: 60rpx 54rpx;

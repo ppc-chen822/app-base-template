@@ -34,6 +34,7 @@ export default {
         title: '未登录',
         content: '请登录后继续使用',
         showCancel: false,
+        confirmColor: this.$mainColor,
         success: (res) => {
           if (res.confirm) {
             console.log('用户点击确定');

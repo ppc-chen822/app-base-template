@@ -12,9 +12,9 @@
     <!-- 新闻标题 -->
     <view class="title-content">
       <view style="width: 80%;">
-        <u--text :text="news.content.articleTitle" :lines="1" :color="newsListObj.titleColor" size="28rpx" bold block></u--text>
+        <u-text :text="news.content.articleTitle" :lines="1" :color="newsListObj.titleColor" size="28rpx" bold block />
       </view>
-      <u--text suffixIcon="arrow-right" align="right" color="#A6A6A6" size="24rpx" iconStyle="font-size: 24rpx; margin: 0 0 -10rpx 10rpx;" text="详情"></u--text>
+      <u-text suffixIcon="arrow-right" align="right" color="#A6A6A6" size="24rpx" iconStyle="font-size: 24rpx; margin: 0 0 -10rpx 10rpx;" text="详情" />
     </view>
 
     <!-- 分割线 -->
@@ -23,7 +23,7 @@
     <!-- 新闻主体 -->
     <view class="news-content">
       <view class="feed">
-        <u--text :text="news.content.articleIntroduction" :lines="3" color="#383838" size="26rpx" lineHeight="40rpx"></u--text>
+        <u-text :text="news.content.articleIntroduction" :lines="3" color="#383838" size="26rpx" lineHeight="40rpx" />
       </view>
       <!-- <u-tag v-if="newsType !== 'partyOpen'" style="margin-left: 20rpx;" text="#农种家庭" :bgColor="newsListObj.tipColor" :borderColor="newsListObj.tipColor" size="mini"></u-tag> -->
     </view>
@@ -32,7 +32,7 @@
     <view class="date-content">
       <view v-if="newsType === 'villageOpen'" />
       <!-- <view class="left" v-if="newsType === 'financialOpen'">
-        <u--text :text="news.code" :lines="1" color="#00BAAD" size="22rpx" />
+        <u-text :text="news.code" :lines="1" color="#00BAAD" size="22rpx" />
       </view> -->
 
       <view class="party-left">
@@ -84,7 +84,7 @@ export default {
   methods: {
     // 跳转详情页面
     goToDetail(id) {
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${id}` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${id}` })
     }
   }
 }

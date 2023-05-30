@@ -7,7 +7,7 @@
         v-for="(item, index) in list"
         :key="index"
       >
-        <u--image
+        <u-image
           :src="item.address"
           width="162rpx"
           height="162rpx"

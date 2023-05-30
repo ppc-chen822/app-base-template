@@ -1,6 +1,6 @@
 <template>
   <view class="multi-photo-news">
-    <u--text :text="news.content.articleTitle" :lines="1" size="32rpx" color="#222222" lineHeight="48rpx" />
+    <u-text :text="news.content.articleTitle" :lines="1" size="32rpx" color="#222222" lineHeight="48rpx" />
     <view class="photo-content">
       <video
         id="video"

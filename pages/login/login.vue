@@ -33,11 +33,9 @@
       <view class="agreement-content">
         <agreement ref="agreement" />
       </view>
-      
-
-
     </view>
-
+    <!-- 版本号 -->
+    <version />
     <!-- 滑动验证码 -->
     <auth-img ref="authImg" @success="loginFun" />
   </view>
@@ -82,7 +80,7 @@ export default {
         fontSize: '32rpx'
       },
       loginBtnStyle: {
-        background: "#2A82E4",
+        background: this.$mainColor,
         color: "#ffffff",
         fontWeight: "bold",
         letterSpacing: "4rpx",
@@ -192,8 +190,10 @@ export default {
         // 保存字典项
         uni.setStorageSync('dictMap', res.dictMap);
 
-
-        uni.$u.toast('登录成功!')
+        uni.showToast({
+          title: '登录成功!',
+          icon: 'success'
+        });
         this.loading = false
         setTimeout(() => {
           uni.switchTab({
@@ -228,7 +228,7 @@ export default {
       position: relative;
       z-index: 1;
       .title{
-        color: #2A82E4;
+        color: $mainColor;
         font-size: 48rpx;
         font-weight: 700;
         padding: 60rpx 54rpx;

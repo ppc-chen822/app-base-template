@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     checkNews({ id }) {
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${id}&title=通知公告` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${id}&title=通知公告` })
     },
     loadMore() {
       if(this.loadmore === 'nomore') {

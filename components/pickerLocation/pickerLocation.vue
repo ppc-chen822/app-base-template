@@ -1,7 +1,7 @@
 <template>
   <view class="locationPicker-content">
     <view class="input-con" @click="show">
-      <u--input
+      <u-input
         v-model="location"
         placeholder="请选择居住地址"
         readonly
@@ -16,7 +16,7 @@
           name="arrow-right"
           color="#bbbbbb"
         />
-      </u--input>
+      </u-input>
     </view>
 
     <u-popup :show="popupShow" round="10" closeable @close="popupShow = false">

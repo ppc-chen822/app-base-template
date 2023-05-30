@@ -1,7 +1,7 @@
 <template>
   <view class="date-picker-content">
     <view class="input-con" @click="show">
-      <u--input
+      <u-input
         v-model="dateStr"
         :placeholder="placeholder"
         readonly
@@ -11,14 +11,9 @@
         :border="inputStyle.border"
         :confirmType="inputStyle.confirmType"
       >
-        <u-icon
-          slot="suffix"
-          name="arrow-right"
-          color="#bbbbbb"
-        />
-      </u--input>
+        <u-icon slot="suffix" name="arrow-right" color="#bbbbbb" />
+      </u-input>
     </view>
-
 
     <u-datetime-picker
       v-model="demoTime"
@@ -27,6 +22,7 @@
       :mode="mode"
       :minDate="minDate"
       :maxDate="maxDate"
+      :confirmColor="$mainColor"
       @confirm="confirmTime"
       @cancel="dateShow = false"
     />
@@ -36,21 +32,21 @@
 <script>
 export default {
   model: {
-    prop: 'value',
-    event: 'input'
+    prop: "value",
+    event: "input",
   },
   props: {
     value: {
       type: String,
-      default: '',
+      default: "",
     },
     placeholder: {
       type: String,
-      default: '请选择日期'
+      default: "请选择日期",
     },
     mode: {
       type: String,
-      default: 'date'
+      default: "date",
     },
     maxDate: {
       type: Number,
@@ -61,7 +57,7 @@ export default {
       type: Number,
       // default: NaN
       // new Date().getTime()
-    }
+    },
   },
   data() {
     return {
@@ -69,43 +65,56 @@ export default {
       dateShow: false,
       demoTime: Number(new Date()),
       inputStyle: {
-        inputAlign: 'right',
-        border: 'none',
-        confirmType: 'next'
+        inputAlign: "right",
+        border: "none",
+        confirmType: "next",
       },
-    }
+    };
+  },
+  watch: {
+    value(data) {
+      this.showDefault();
+    },
   },
   methods: {
+    //回显默认值
+    showDefault() {
+      const { value } = this;
+      if (value) {
+        this.dateStr = value.split(" ")[0];
+      }
+    },
     show() {
       this.dateShow = true;
-      uni.hideKeyboard()
+      uni.hideKeyboard();
     },
     confirmTime({ mode, value }) {
-      const timeFormat = uni.$u.timeFormat
-      let dateStr
+      const timeFormat = uni.$u.timeFormat;
+      let dateStr;
 
       switch (mode) {
-        case 'date':
-          dateStr = timeFormat(value, 'yyyy-mm-dd')
+        case "date":
+          dateStr = timeFormat(value, "yyyy-mm-dd");
           break;
-        case 'datetime':
-          dateStr = timeFormat(value, 'yyyy-mm-dd hh:MM:ss')
+        case "datetime":
+          dateStr = timeFormat(value, "yyyy-mm-dd hh:MM:ss");
           break;
         default:
           break;
       }
-      this.dateStr = dateStr
+      this.dateStr = dateStr;
       this.$emit("input", this.dateStr);
-      this.dateShow = false
-    }
-  }
-}
+      this.dateShow = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  .date-picker-content{
-    .input-con{
-      margin-left: 26rpx;
-    }
+.date-picker-content {
+  width: 100%;
+  .input-con {
+    margin-left: 26rpx;
   }
+}
 </style>

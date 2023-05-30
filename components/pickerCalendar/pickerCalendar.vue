@@ -1,7 +1,7 @@
 <template>
   <view class="date-picker-content">
     <view class="input-con" @click="show">
-      <u--input
+      <u-input
         v-model="dateStr"
         :placeholder="placeholder"
         readonly
@@ -17,7 +17,7 @@
           name="arrow-right"
           color="#bbbbbb"
         />
-      </u--input>
+      </u-input>
     </view>
 
      <!-- 日历(选择日期范围) -->
@@ -26,7 +26,7 @@
       mode="range"
       :minDate="calendarMin"
       :maxDate="calendarMax"
-      color="#2279ff"
+      :color="$mainColor"
       @confirm="confirmDate"
       @close="calendarShow = false"
     />

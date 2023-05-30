@@ -93,7 +93,7 @@ export default {
         uni.$u.toast('暂无详情~')
         return
       }
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${id}&title=${name}` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${id}&title=${name}` })
     },
     // =============== API ===============
     // 查询景点详情

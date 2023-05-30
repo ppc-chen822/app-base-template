@@ -2,7 +2,7 @@
 	<view class="page-container">
    <view class="top" :style="{backgroundImage: `url(${bgImg})`}">
    	<view class="title">
-      <u--text text="消息列表" bold size="36rpx" color="#FFFFFF" />
+      <u-text text="消息列表" bold size="36rpx" color="#FFFFFF" />
    	</view>
    </view>
    <view class="content">

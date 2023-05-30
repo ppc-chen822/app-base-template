@@ -29,7 +29,7 @@
       <template v-if="news && news.length > 0">
         <!-- 查看更多 -->
         <view class="fold-btn">
-          <u--text
+          <u-text
             align="center"
             color="#2A82E4"
             size="24rpx"
@@ -65,7 +65,7 @@ export default {
       this.isExpend = !this.isExpend
     },
     enterDetail({ id }) {
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${id}` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${id}` })
     },
     // =============== API ===============
     getContentThreeFun() {

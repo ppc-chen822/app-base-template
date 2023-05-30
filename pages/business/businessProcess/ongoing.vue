@@ -38,7 +38,7 @@
         <!-- 查看更多/收起按钮 -->
         <view class="fold-btn">
           <u-loading-icon mode="circle" v-if="item.loading" text="加载中" size="30rpx" textSize="24rpx" />
-          <u--text
+          <u-text
             v-if="!item.loading"
             align="center"
             color="#2A82E4"

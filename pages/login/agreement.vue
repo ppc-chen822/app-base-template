@@ -1,6 +1,6 @@
 <template>
   <view class="input-tip">
-    <u-checkbox-group v-model="anonymous">
+    <u-checkbox-group v-model="anonymous" :active-color="$mainColor">
       <u-checkbox shape="circle" name="匿名" label="我已阅读并同意" size="small" />
     </u-checkbox-group>
     <view class="anonymous-tip">
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     enterDetail(id) {
-      uni.navigateTo({ url: `/pages/index/threeOpen/newsDetail?id=${this[id]}` })
+      uni.navigateTo({ url: `/pages/common/newsDetail?id=${this[id]}` })
     },
     // 
     // =============== API ===============
@@ -44,8 +44,8 @@ export default {
         modelCode
       }
       getContentApi(params).then((res) => {
-        console.log(res.data.records);
-        this[modelCode+ 'ID'] = res.data.records[0].id
+        console.log(res.records);
+        this[modelCode+ 'ID'] = res.records[0].id
       }).catch(err => {
         console.log(err);
       })
@@ -62,7 +62,7 @@ export default {
     font-size: 26rpx;
     .anonymous-tip{
       .link{
-        color: #2980e3;
+        color: $mainColor;
         margin: 0 5rpx;
       }
     }

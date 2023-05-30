@@ -90,6 +90,8 @@
 
     <!-- <fab /> -->
     <uploadFun ref="upload" @uploadSuccess="updateAvatarFun" />
+
+    <version color="#222" />
   </view>
 </template>
 
@@ -165,7 +167,7 @@ export default {
           {
             icon: `${this.imgUrl}/my/about.png`,
             name: "关于我们",
-            navigate: '/pages/index/threeOpen/newsDetail?id=1576106058639622146&title=关于我们',
+            navigate: '/pages/common/newsDetail?id=1576106058639622146&title=关于我们',
             border: true,
             width: "38rpx",
             height: "38rpx",
@@ -218,6 +220,7 @@ export default {
         uni.showModal({
           title: '退出登录',
           content: '确定退出登录吗？',
+          confirmColor: this.$mainColor,
           success: (res) => {
             if (res.confirm) {
               // logOutApi().then(() => {
